@@ -4,6 +4,6 @@ package version
 
 var (
 	Version = "dev"
-	Commit  = "none"
+	Commit  = "unknown"
 	Date    = "unknown"
 )

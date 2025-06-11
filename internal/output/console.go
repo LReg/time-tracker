@@ -17,6 +17,6 @@ func ShowVersionAndExit() {
 }
 
 func ShowHelpAndExit() {
-	fmt.Printf("Time Tracker Help\ntt [arg]\nArgs List:\n	start - start the tracking for your day. The information about what you did will be set with the next execution\n	show - will display a gui in the browser to visualize your day(s).\n [any string] Will start a new timeslot and put the proveded string as what you did since the last execution")
+	fmt.Printf("Time Tracker Help\ntt [arg]\nArgs List:\n	start - start the tracking for your day. The information about what you did will be set with the next execution\n	show - will display a gui in the browser to visualize your day(s).\n	[any string] - Will start a new timeslot and put the provided string as what you did since the last execution")
 	os.Exit(0)
 }

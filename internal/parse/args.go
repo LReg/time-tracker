@@ -30,14 +30,14 @@ func ParseArgsAndHandle() {
 		case ArgVersion:
 			output.ShowVersionAndExit()
 		case ArgShowHistory:
-			history.ShowHistory()
+			history.ShowHistoryAndListen()
 		case ArgStart:
-			timeslot.Start()
+			timeslot.StartAndExit()
 		case ArgShowHistoryConsole:
-			history.ShowHistoryConsole()
+			history.ShowHistoryConsoleAndExit()
 		}
 	}
 
 	combined := strings.Join(args[1:], " ")
-	timeslot.AppendToPreviousTimeSlot(combined)
+	timeslot.AppendToPreviousTimeSlotAndExit(combined)
 }

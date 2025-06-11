@@ -1,36 +1,28 @@
 package history
 
 import (
-	"encoding/json"
-	"fmt"
+	"github.com/LReg/time-tracker/internal/api"
 	"github.com/LReg/time-tracker/internal/models"
 	"github.com/LReg/time-tracker/internal/timeslot"
-	log "github.com/sirupsen/logrus"
+	"github.com/LReg/time-tracker/internal/ui"
+	"github.com/LReg/time-tracker/internal/util"
 	"os"
 	"time"
 )
 
-func ShowHistory() {
-	fmt.Println("Not implemented yet")
+func ShowHistoryAndListen() {
+	go api.StartTimeSlotApi()
+	ui.StartStaticWebServer()
 	os.Exit(1)
 }
 
-func ShowHistoryConsole() {
+func ShowHistoryConsoleAndExit() {
 	for _, ts := range getHistoryForTime(time.Now()) {
-		marshal, err := json.Marshal(ts)
-		if err != nil {
-			log.Error("Error marshalling history: ", err)
-		}
-		fmt.Println(string(marshal))
+		ts.Print()
 	}
+	os.Exit(0)
 }
 
 func getHistoryForTime(time time.Time) []models.TimeSlot {
-	return timeslot.GetTimeSlotsFromTo(getLastMidnightFrom(time), time)
-}
-
-func getLastMidnightFrom(from time.Time) time.Time {
-	year, month, day := from.Date()
-	lastMidnight := time.Date(year, month, day, 0, 0, 0, 0, from.Location())
-	return lastMidnight
+	return timeslot.GetTimeSlotsFromTo(util.GetLastMidnightFrom(time), time)
 }

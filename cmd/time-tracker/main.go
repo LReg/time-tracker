@@ -5,6 +5,12 @@ import (
 	"github.com/LReg/time-tracker/internal/stormdb"
 )
 
+var (
+	Version = "dev"
+	Commit  = "none"
+	Date    = "unknown"
+)
+
 func main() {
 	stormdb.ConnectToDB()
 	parse.ParseArgsAndHandle()
