@@ -15,7 +15,7 @@ func StartTimeSlotApi() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/quit", func(writer http.ResponseWriter, request *http.Request) {
 		writer.Header().Set("Content-Type", "text/plain; charset=utf-8")
-		writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:4200")
+		writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:49152")
 		writer.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 		writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		writer.WriteHeader(http.StatusOK)
@@ -40,7 +40,7 @@ func StartTimeSlotApi() {
 		to := util.GetLastMidnightFrom(date.Add(24 * time.Hour))
 
 		timeslots := timeslot.GetTimeSlotsFromTo(from, to)
-		writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:4200")
+		writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:49152")
 		writer.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 		writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 

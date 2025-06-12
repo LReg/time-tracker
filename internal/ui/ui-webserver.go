@@ -21,9 +21,9 @@ func StartStaticWebServer() {
 	mux.Handle("/", http.FileServer(http.FS(subFS)))
 	go func() {
 		time.Sleep(1 * time.Second)
-		util.OpenBrowser("http://localhost:4200")
+		util.OpenBrowser("http://localhost:49152")
 	}()
-	err = http.ListenAndServe(":4200", mux)
+	err = http.ListenAndServe(":49152", mux)
 	if err != nil {
 		log.Fatal("Could not start webserver", err)
 	}

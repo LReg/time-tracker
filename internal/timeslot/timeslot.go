@@ -11,7 +11,7 @@ import (
 
 func StartAndExit() {
 	timeslot := models.TimeSlot{
-		Text:  "Start new episode",
+		Text:  "Start of the day",
 		Start: time.Now(),
 		End:   time.Now(),
 	}
