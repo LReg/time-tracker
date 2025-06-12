@@ -40,9 +40,9 @@ func StartTimeSlotApi() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/quit", func(writer http.ResponseWriter, request *http.Request) {
-		writer.WriteHeader(http.StatusOK)
 		setCorsHeaders(writer)
 		writer.Header().Set("Content-Type", "text/plain; charset=utf-8")
+		writer.WriteHeader(http.StatusOK)
 		_, err := writer.Write([]byte("OK"))
 		if err != nil {
 			log.Error("Error writing response", err)
