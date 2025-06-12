@@ -1,0 +1,13 @@
+.time-slot {
+    background-color: #adcfff;
+    border-radius: 10px;
+    padding: .5rem;
+    box-shadow: 10px 10px 10px rgba(173, 207, 255, 0.51);
+}
+
+#timeslot-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+}
