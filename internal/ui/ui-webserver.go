@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+var WebserverUrl string = "http://localhost:49152"
+
 //go:embed web/*
 var uiFiles embed.FS
 
@@ -21,7 +23,7 @@ func StartStaticWebServer() {
 	mux.Handle("/", http.FileServer(http.FS(subFS)))
 	go func() {
 		time.Sleep(1 * time.Second)
-		util.OpenBrowser("http://localhost:49152")
+		util.OpenBrowser(WebserverUrl)
 	}()
 	err = http.ListenAndServe(":49152", mux)
 	if err != nil {
