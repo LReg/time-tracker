@@ -68,7 +68,7 @@ jobs:
         -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
         -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
         -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
-        -o dist/tt-darwin-arm64  ./cmd/time-tracker
+        -o dist/tt-linux-arm64  ./cmd/time-tracker
         
         GOOS=linux GOARCH=amd64 go build \
         -ldflags="-s -w \
