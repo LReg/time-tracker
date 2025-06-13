@@ -39,7 +39,7 @@ jobs:
         -ldflags="-s -w \
         -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
         -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
-        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \ 
+        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
         -o dist/tt.exe  ./cmd/time-tracker
         
     - name: Create GitHub Release
