@@ -40,7 +40,42 @@ jobs:
         -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
         -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
         -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
-        -o dist/tt.exe  ./cmd/time-tracker
+        -o dist/tt-windows-amd64.exe  ./cmd/time-tracker
+        
+        GOOS=darwin GOARCH=arm64 go build \
+        -ldflags="-s -w \
+        -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
+        -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
+        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
+        -o dist/tt-darwin-arm64-M1  ./cmd/time-tracker
+        
+        GOOS=darwin GOARCH=amd64 go build \
+        -ldflags="-s -w \
+        -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
+        -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
+        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
+        -o dist/tt-darwin-amd64-M1  ./cmd/time-tracker
+        
+        GOOS=darwin GOARCH=amd64 go build \
+        -ldflags="-s -w \
+        -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
+        -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
+        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
+        -o dist/tt-darwin-amd64  ./cmd/time-tracker
+        
+        GOOS=linux GOARCH=arm64 go build \
+        -ldflags="-s -w \
+        -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
+        -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
+        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
+        -o dist/tt-darwin-arm64  ./cmd/time-tracker
+        
+        GOOS=linux GOARCH=amd64 go build \
+        -ldflags="-s -w \
+        -X github.com/LReg/time-tracker/internal/version.Version=${{ steps.vars.outputs.version }} \
+        -X github.com/LReg/time-tracker/internal/version.Commit=${{ steps.vars.outputs.commit }} \
+        -X github.com/LReg/time-tracker/internal/version.Date=${{ steps.vars.outputs.build_time }}" \
+        -o dist/tt-linux-amd64  ./cmd/time-tracker
         
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
@@ -48,4 +83,8 @@ jobs:
         name: "Release ${{ steps.vars.outputs.version }}"
         tag_name: ${{ steps.vars.outputs.version }}
         files: |
-          dist/tt.exe
+          dist/tt-windows-amd64.exe
+          dist/tt-darwin-arm64-M1
+          dist/tt-darwin-amd64
+          dist/tt-linux-amd64
+          dist/tt-linux-arm64
