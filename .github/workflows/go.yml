@@ -35,6 +35,7 @@ jobs:
 
     - name: Build
       run: |
+        mkdir -p dist
         GOOS=windows GOARCH=amd64 go build \
         -ldflags="-s -w \
         -X 'internal.version.version.Version==${{ steps.vars.outputs.version }}' \
