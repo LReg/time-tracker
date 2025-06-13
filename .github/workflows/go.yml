@@ -46,7 +46,7 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        name: "Release ${{ env.VERSION }}"
-        tag_name: ${{ env.VERSION }}
+        name: "Release ${{ steps.vars.outputs.version }}"
+        tag_name: ${{ steps.vars.outputs.version }}
         files: |
           dist/tt.exe
