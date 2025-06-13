@@ -2,8 +2,6 @@ package version
 
 // will be overridden
 
-var (
-	Version = "dev"
-	Commit  = "unknown"
-	Date    = "unknown"
-)
+var Version = "dev"
+var Commit = "unknown"
+var Date = "unknown"
