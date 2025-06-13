@@ -41,7 +41,7 @@ jobs:
         -X 'internal.version.version.Version==${{ steps.vars.outputs.version }}' \
         -X 'internal.version.version.Commit=${{ steps.vars.outputs.commit }}' \
         -X 'internal.version.version.Date=${{ steps.vars.outputs.build_time }}'"\
-        -o dist/tt.exe  .cmd/time-tracker/main.go
+        -o dist/tt.exe  cmd/time-tracker/main.go
         
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
