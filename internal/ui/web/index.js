@@ -1,6 +1,5 @@
 function displayDay(date) {
     const jsdate = new Date(date)
-    console.log(jsdate.getTime())
 
     fetch(`http://localhost:8888/tt/${jsdate.getTime()}`).then(async (res) => {
         try {
