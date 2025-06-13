@@ -1,1 +1,0 @@
-go build build -ldflags "-X 'github.com/LReg/time-tracker/internal/internal.version.Version=$(git describe --tags)' -X github.com/LReg/time-tracker/internal/internal.version.Commit=$(git rev-parse HEAD)' -X 'github.com/LReg/time-tracker/internal/internal.version..Date=$(date -u +%Y-%m-%dT%H:%M:%SZ)'" -o tt  ../cmd/time-tracker/main.go
