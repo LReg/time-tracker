@@ -30,7 +30,7 @@ export class TimelineComponent {
   timeSlots$ = toObservable(this.date).pipe(
     filter(date => date !== undefined),
     switchMap(date => this.timeSlotService.timeSlotsForDay$(date as Date)),
-    catchError(() => of([] as TimeSlot[]) )
+    catchError(() => of([] as TimeSlot[]))
   )
   constructor(
     private timeSlotService: TimeSlotService

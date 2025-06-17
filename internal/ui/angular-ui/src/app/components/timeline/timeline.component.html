@@ -4,6 +4,8 @@
   <div class="timeline-container">
       @for (timeSlot of timeSlots; track timeSlot.ID; let last = $last) {
         <app-time-slot [timeSlot]="timeSlot" [scroll]="scroll" [lastElement]="last"></app-time-slot>
+      } @empty {
+          <h1>Nothing found</h1>
       }
   </div>
 }
