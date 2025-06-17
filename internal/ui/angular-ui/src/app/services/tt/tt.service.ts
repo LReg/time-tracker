@@ -9,7 +9,7 @@ export class TtService {
   constructor(private http: HttpClient) { }
 
   quitTt() {
-   this.http.get('http://localhost:8888/quit').subscribe(() => {
+   this.http.get('http://localhost:8888/quit', { responseType: 'text'}).subscribe(() => {
       window.close();
    })
   }

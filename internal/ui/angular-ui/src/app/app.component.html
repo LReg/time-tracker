@@ -1,4 +1,4 @@
 <div class="home-container">
-  <app-navbar></app-navbar>
-  <app-timeline></app-timeline>
+  <app-navbar (selectedDate)="handleDateSelected($event)"></app-navbar>
+  <app-timeline [date]="selectedDate"></app-timeline>
 </div>

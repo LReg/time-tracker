@@ -1,15 +1,16 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {TtService} from "../../services/tt/tt.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
 
+  now = new Date();
   @Output() selectedDate = new EventEmitter<Date>();
 
   constructor(

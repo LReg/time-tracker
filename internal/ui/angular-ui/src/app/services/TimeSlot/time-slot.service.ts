@@ -10,7 +10,7 @@ export class TimeSlotService {
   constructor(private http: HttpClient) { }
 
   timeSlotsForDay$(date: Date) {
-    this.http.get<TimeSlot[]>(`http://localhost:8888/tt/${date.getTime()}`);
+    return this.http.get<TimeSlot[]>(`http://localhost:8888/tt/${date.getTime()}`);
   }
 
 }
