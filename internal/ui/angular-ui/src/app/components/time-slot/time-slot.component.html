@@ -5,7 +5,7 @@
         <span class="mr d">{{ timeSlot()?.Start | date:"shortTime" }}</span>
       </div>
       <div class="v-line"></div>
-      @if (lastElement) {
+      @if (lastElement()) {
         <div class="endpoint">
           <span class="mr d">{{ timeSlot()?.End | date:"shortTime" }}</span>
         </div>

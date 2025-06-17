@@ -17,7 +17,7 @@ export class TimeSlotComponent {
 
   timeSlot = input<TimeSlot>();
   scroll = input<number>(1);
-  @Input() lastElement = false;
+  lastElement = input<boolean>(false);
 
   heightPx = computed(() => {
     const ts = this.timeSlot();
@@ -25,7 +25,8 @@ export class TimeSlotComponent {
     const from = new Date(ts.Start);
     const to = new Date(ts.End);
     const durationInMinutes = (to.getTime() - from.getTime()) / (1000 * 60);
-    return Math.max(40, durationInMinutes * this.scroll());
+    let height = durationInMinutes * this.scroll()
+    return Math.max(40, height);
   });
 
   protected readonly last = last;
