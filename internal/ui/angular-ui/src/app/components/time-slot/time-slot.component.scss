@@ -1,0 +1,60 @@
+.time-slot {
+  width: 20rem;
+  .time-slot-divider {
+
+    --endpoint-width: 20px;
+    --endpoint-height: 10px;
+
+
+    display: flex;
+    height: 100%;
+
+
+
+    .content-container {
+      display: flex;
+      height: 100%;
+      width: calc(100% - var(--endpoint-width));
+      align-items: end;
+      .content {
+        padding: 3px;
+        text-align: center;
+        height: calc(100% - var(--endpoint-height));
+        width: 100%;
+        background-color: rgba(60, 159, 200, 0.53);
+        overflow: hidden;
+      }
+    }
+
+
+    .line {
+      display: flex;
+      flex-direction: column;
+      width: 20px;
+      align-items: center;
+      .v-line {
+        height: calc(100% - var(--endpoint-height) * 1);
+        width: 3px;
+        background-color: rgba(87, 87, 87, 0.75);
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+      .endpoint {
+        height: var(--endpoint-height);
+        width: var(--endpoint-width);
+        background-color: #000000;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.d {
+  display: block;
+  width: 7rem;
+}
+.mr {
+  position: relative;
+  right: 7rem;
+}

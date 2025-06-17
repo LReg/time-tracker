@@ -1,0 +1,46 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  height: 5vh;
+  padding: 5px;
+}
+
+input[type="date"]{
+  background-color: #0080ff;
+  height: 3.5rem;
+  padding: 15px;
+  font-family: "Roboto Mono",monospace;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+#quit-button{
+  padding: 13px 40px;
+  height: 45px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+#quit-button:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+#quit-button:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}

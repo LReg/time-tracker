@@ -1,0 +1,20 @@
+<div class="time-slot" [ngStyle]="{'height': heightPx()+ 'px'}">
+  <div class="time-slot-divider">
+    <div class="line">
+      <div class="endpoint">
+        <span class="mr d">{{ timeSlot()?.Start | date:"shortTime" }}</span>
+      </div>
+      <div class="v-line"></div>
+      @if (lastElement) {
+        <div class="endpoint">
+          <span class="mr d">{{ timeSlot()?.End | date:"shortTime" }}</span>
+        </div>
+      }
+    </div>
+    <div class="content-container">
+      <div class="content">
+        {{ timeSlot()?.Text  }}
+      </div>
+    </div>
+  </div>
+</div>
