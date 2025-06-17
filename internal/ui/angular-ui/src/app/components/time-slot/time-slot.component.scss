@@ -1,5 +1,6 @@
 .time-slot {
-  width: 20rem;
+  width: 25rem;
+  padding-left: 10rem;
   .time-slot-divider {
 
     --endpoint-width: 20px;
@@ -33,7 +34,7 @@
       width: 20px;
       align-items: center;
       .v-line {
-        height: calc(100% - var(--endpoint-height) * 1);
+        height: calc(100% - var(--endpoint-height));
         width: 3px;
         background-color: rgba(87, 87, 87, 0.75);
         flex-grow: 0;
