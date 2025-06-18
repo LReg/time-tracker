@@ -18,25 +18,12 @@
 </p>
 <br>
 
-##  Table of Contents
-
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ Getting Started](#-getting-started)
-  - [ Prerequisites](#-prerequisites)
-  - [ Installation](#-installation)
-  - [ Usage](#-usage)
-- [ Project Roadmap](#-project-roadmap)
-
----
-
 ##  Overview
 
 A local-first timetracking tool written in Go.
 This application is designed for developers or technical users who want to track time without relying on complex services, accounts, or cloud infrastructure.
 It runs as a command-line application, stores data locally, and is easy to extend or integrate into other workflows.
 
----
 
 ##  Features
 
@@ -44,8 +31,6 @@ It runs as a command-line application, stores data locally, and is easy to exten
 - **Local storage**: Keeps data on your machine in a Bold-DB
 - **CLI-first**: Optimized for use directly from the terminal
 - **Minimalist design**: Easy to read, understand, and modify
-
----
 
 ##  Getting Started
 
@@ -97,5 +82,3 @@ Recommendations:
 - [X] <strike>Upgrade to Angular UI</strike>
 - [ ] Write tests
 - [ ] Integrate with std-in for example git commit -m "abc" | tt
-
----
