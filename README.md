@@ -6,8 +6,10 @@
 	<em><code>❯ tt working on Ticket-3</code></em>
 </p>
 <p align="center">
+	<img src="https://img.shields.io/github/languages/top/LReg/time-tracker?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/license/LReg/time-tracker?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/LReg/time-tracker?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/v/release/LReg/time-tracker?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 </p>
 <p align="center"><!-- default option, no dependency badges. -->
 </p>
