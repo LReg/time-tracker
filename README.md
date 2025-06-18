@@ -1,5 +1,5 @@
 <p align="center">
-    ![TimeTrackerLogo](https://github.com/user-attachments/assets/42e5c46a-5ab0-404c-b5c7-f400553a2cf9)
+	<img height="400" src="https://github.com/user-attachments/assets/42e5c46a-5ab0-404c-b5c7-f400553a2cf9" alt="logo">
 </p>
 <p align="center"><h1 align="center">TIME-TRACKER</h1></p>
 <p align="center">
