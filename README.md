@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
+    ![TimeTrackerLogo](https://github.com/user-attachments/assets/42e5c46a-5ab0-404c-b5c7-f400553a2cf9)
 </p>
 <p align="center"><h1 align="center">TIME-TRACKER</h1></p>
 <p align="center">
