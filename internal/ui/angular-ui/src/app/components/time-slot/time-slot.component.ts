@@ -1,14 +1,16 @@
-import {Component, computed, input, Input} from '@angular/core';
+import {Component, computed, input} from '@angular/core';
 import {TimeSlot} from "../../models/TimeSlot";
-import {DatePipe, JsonPipe, NgStyle} from "@angular/common";
+import {DatePipe, NgStyle} from "@angular/common";
 import {last} from "rxjs";
+import {DurationPipe} from "../../duration.pipe";
 
 @Component({
   selector: 'app-time-slot',
   standalone: true,
   imports: [
     NgStyle,
-    DatePipe
+    DatePipe,
+    DurationPipe
   ],
   templateUrl: './time-slot.component.html',
   styleUrl: './time-slot.component.scss'

@@ -14,6 +14,7 @@ import (
 
 func setCorsHeaders(writer http.ResponseWriter) {
 	writer.Header().Set("Access-Control-Allow-Origin", ui.WebserverUrl)
+	// writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:4200")
 	writer.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 }
