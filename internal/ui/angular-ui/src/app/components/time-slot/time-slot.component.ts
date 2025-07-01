@@ -23,12 +23,12 @@ export class TimeSlotComponent {
 
   heightPx = computed(() => {
     const ts = this.timeSlot();
-    if (!ts) return 40;
+    if (!ts) return 55;
     const from = new Date(ts.Start);
     const to = new Date(ts.End);
     const durationInMinutes = (to.getTime() - from.getTime()) / (1000 * 60);
     let height = durationInMinutes * this.scroll()
-    return Math.max(40, height);
+    return Math.max(55, height);
   });
 
   protected readonly last = last;
