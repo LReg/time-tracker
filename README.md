@@ -4,6 +4,7 @@
 <p align="center"><h1 align="center">TIME-TRACKER</h1></p>
 <p align="center">
 	<em><code>❯ tt working on Ticket-3</code></em>
+	<em><code>❯ git commit -m "Ticket-4: change config" | tt</code></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/languages/top/LReg/time-tracker?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
@@ -76,9 +77,11 @@ Recommendations:
 - ```tt I did stuff on ticket-28``` tracks what you did since the last execution
 - ```tt version``` displays your current installed version
 - ```tt show``` opens a local website in your browser that displays you tracked times
+- ```echo "fixed bug" | tt``` tracks piped text as a timeslot
+- ```git commit -m "fix auth" | tt``` pipes git commit output, extracts the commit message
 
 ##  Project Roadmap
 
 - [X] <strike>Upgrade to Angular UI</strike>
 - [ ] Write tests
-- [ ] Integrate with std-in for example git commit -m "abc" | tt
+- [X] <strike>Integrate with std-in for example git commit -m "abc" | tt</strike>
