@@ -9,6 +9,12 @@ import (
 
 var gitCommitRe = regexp.MustCompile(`^\[\w+ [a-f0-9]+\] (.+)$`)
 
+type stdinParser func(input string) (parsed string, matched bool)
+
+var stdinParsers = []stdinParser{
+	parseGitCommit,
+}
+
 func tryReadStdin() (string, bool) {
 	stat, err := os.Stdin.Stat()
 	if err != nil {
@@ -28,20 +34,35 @@ func tryReadStdin() (string, bool) {
 	return strings.Join(lines, "\n"), true
 }
 
+func parseGitCommit(input string) (string, bool) {
+	firstLine := input
+	if idx := strings.IndexByte(input, '\n'); idx != -1 {
+		firstLine = input[:idx]
+	}
+
+	m := gitCommitRe.FindStringSubmatch(firstLine)
+	if len(m) != 2 {
+		return "", false
+	}
+
+	return strings.TrimSpace(m[1]), true
+}
+
 func parseFromStdin(data string) string {
 	data = strings.TrimSpace(data)
 	if data == "" {
 		return ""
 	}
 
-	firstLine := data
+	for _, p := range stdinParsers {
+		if parsed, matched := p(data); matched {
+			return parsed
+		}
+	}
+
 	if idx := strings.IndexByte(data, '\n'); idx != -1 {
-		firstLine = data[:idx]
+		return data[:idx]
 	}
 
-	if m := gitCommitRe.FindStringSubmatch(firstLine); len(m) == 2 {
-		return strings.TrimSpace(m[1])
-	}
-
-	return firstLine
+	return data
 }
