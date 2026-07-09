@@ -1,6 +1,7 @@
 package parse
 
 import (
+	"fmt"
 	"github.com/LReg/time-tracker/internal/history"
 	"github.com/LReg/time-tracker/internal/output"
 	"github.com/LReg/time-tracker/internal/timeslot"
@@ -36,14 +37,17 @@ func ParseArgsAndHandle() {
 		}
 
 		combined := strings.Join(args[1:], " ")
+		fmt.Printf("Tracked: %s\n", combined)
 		timeslot.AppendToPreviousTimeSlotAndExit(combined)
 	}
 
 	if stdin, ok := tryReadStdin(); ok {
+		fmt.Println(stdin)
 		text := parseFromStdin(stdin)
 		if text == "" {
 			output.ShowUsageAndExit()
 		}
+		fmt.Printf("Tracked: %s\n", text)
 		timeslot.AppendToPreviousTimeSlotAndExit(text)
 	}
 
