@@ -19,25 +19,33 @@ const (
 func ParseArgsAndHandle() {
 	args := os.Args
 
-	if len(args) < 2 {
-		output.ShowUsageAndExit()
-	}
-
-	if len(args) == 2 {
-		switch args[1] {
-		case ArgHelp:
-			output.ShowHelpAndExit()
-		case ArgVersion:
-			output.ShowVersionAndExit()
-		case ArgShowHistory:
-			history.ShowHistoryAndListen()
-		case ArgStart:
-			timeslot.StartAndExit()
-		case ArgShowHistoryConsole:
-			history.ShowHistoryConsoleAndExit()
+	if len(args) > 1 {
+		if len(args) == 2 {
+			switch args[1] {
+			case ArgHelp:
+				output.ShowHelpAndExit()
+			case ArgVersion:
+				output.ShowVersionAndExit()
+			case ArgShowHistory:
+				history.ShowHistoryAndListen()
+			case ArgStart:
+				timeslot.StartAndExit()
+			case ArgShowHistoryConsole:
+				history.ShowHistoryConsoleAndExit()
+			}
 		}
+
+		combined := strings.Join(args[1:], " ")
+		timeslot.AppendToPreviousTimeSlotAndExit(combined)
 	}
 
-	combined := strings.Join(args[1:], " ")
-	timeslot.AppendToPreviousTimeSlotAndExit(combined)
+	if stdin, ok := tryReadStdin(); ok {
+		text := parseFromStdin(stdin)
+		if text == "" {
+			output.ShowUsageAndExit()
+		}
+		timeslot.AppendToPreviousTimeSlotAndExit(text)
+	}
+
+	output.ShowUsageAndExit()
 }
